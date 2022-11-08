@@ -1,0 +1,27 @@
+/**
+ *
+ * AR2022 Footer
+ *
+ */
+
+.footer-wrapper {
+  color: $white;
+  background-color: $tamu-maroon;
+  .nav-link {
+    color: $white;
+    // @include hover-focus() { // Deprecated
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .nav-item {
+      &:not(:first-of-type) {
+        .nav-link {
+          border-left: 1px solid #e1e1e1;
+        }
+      }
+    }
+  }
+}

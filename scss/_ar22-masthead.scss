@@ -1,0 +1,37 @@
+/**
+ *
+ * AR2022 Masthead
+ *
+ */
+
+.masthead {
+  height: 33vh;
+  //background-color: $hawkes-blue;
+  background-image: url("../img/title-art-splash-page.png");
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-size: contain;
+  @include media-breakpoint-up(lg) {
+    height: 66vh;
+  }
+}
+
+.down-arrow {
+  animation: bounce 2s cubic-bezier(.34, .55, .25, .83) infinite;
+}
+
+.bi-chevron-down {
+  &::before {
+    //text-shadow: .05em .05em .1em $black;
+  }
+}
+
+@keyframes bounce {
+  40%{
+    transform: translate3d(0, -20px, 0);
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}

@@ -1,0 +1,85 @@
+/**
+ *
+ * AR2022 On This Page Navigation
+ *
+ * Every link gets...
+ * margin: .5rem .25rem;
+ *
+ * First link gets..
+ * margin-left: .5rem
+ * margin-right: 0;
+ *
+ * Last link gets...
+ * margin-right: .5rem;
+ * margin-left: 0;
+ *
+ */
+
+.otp-nav {
+  color: $white;
+  background-color: $cerulean-blue; //$cornflower-blue;
+  .nav-item {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    line-height: 1;
+    &:not(:last-of-type) {
+      border-right: 2px solid $black-white;
+    }
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &:last-of-type {
+      padding-right: 0;
+    }
+    .nav-link {
+      padding: 0;
+      //margin: .5rem 0;
+      font-size: .9375rem;
+      font-weight: 600;
+      color: $white;
+      text-decoration: none;
+      //text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+      //&:not(.no-border) {
+      //  border-right: 1px solid $white;
+      //}
+      // @include hover-focus() { // Deprecated
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        border-bottom: 2px solid $white;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  /*
+  .otp-nav {
+    .nav-item {
+      .nav-link {
+        padding: 0 .5rem;
+        margin: .5rem 0;
+      }
+      &:not(:last-of-type) {
+        .nav-link {
+          border-right: 1px solid $black-white;
+        }
+      }
+      &:first-of-type {
+        .nav-link {
+          //padding: 0 .5rem;
+          margin-right: 0;
+          margin-left: .5rem;
+        }
+      }
+      &:last-of-type {
+        .nav-link {
+          //padding: 0 .5rem;
+          margin-right: .5rem;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  */
+}

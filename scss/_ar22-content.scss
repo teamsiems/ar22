@@ -1,0 +1,144 @@
+/**
+ *
+ * AR2022 Content
+ *
+ */
+
+.content-col {
+  color: $endeavour-blue;
+  ul li:not(.nav-item),
+  ol li:not(.nav-item) {
+    margin-bottom: calc($spacer / 2); // Deprecated $spacer / 2; Removed calc() from function-disallowed-list
+  }
+  hr {
+    border-top-width: 2px;
+  }
+  .no-bullets {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    li {
+      margin-bottom: calc($spacer / 2); // Deprecated $spacer / 2; Removed calc() from function-disallowed-list
+    }
+  }
+  a:not(.nav-link) {
+    //font-weight: 600;
+    color: $prussian-blue;
+    text-decoration: none;
+    border-bottom: 1px solid $prussian-blue;
+    // @include hover-focus() { // Deprecated
+    &:hover,
+    &:focus {
+      margin-bottom: calc($spacer / 2); // Deprecated $spacer / 2; // Removed calc() from function-disallowed-list
+      color: $tamu-maroon; // Added 20220208-cws
+    }
+  }
+  .round-image img {
+    @include border-radius(50%);
+  }
+
+  /*
+  // External link icon
+  // stylelint-disable-next-line
+  a[href^="http"]:not([href*="/annualreport"]) {
+    position: relative;
+    margin-right: 1.2rem;
+    &::after {
+      position: relative;
+      right: -1.2rem;
+      //margin-left: .2rem;
+      font-weight: 700;
+      // stylelint-disable-next-line
+      font-family: bootstrap-icons;
+      //color: $tamu-maroon;
+      text-decoration: none;
+      content: "\f1c5"; // Bootstrap icon bi-box-arrow-up-right // "\f35d"; // .fa-external-link-alt icon
+    }
+  }
+  */
+
+  .content-section {
+    a {
+      //font-weight: 600;
+      color: $prussian-blue;
+      text-decoration: none;
+      border-bottom: 1px solid $prussian-blue;
+      // @include hover-focus() { // Deprecated
+      &:hover,
+      &:focus {
+        color: $tamu-maroon; // Added 20220208-cws
+        border-bottom: 3px solid $tamu-maroon; // 2px solid $cornflower-blue; // Changed 20220208-cws
+      }
+    }
+    .vision-link {
+      font-style: italic;
+      color: $prussian-blue; // $endeavour-blue; // Changed 20220208-cws
+      text-decoration: none;
+      border-bottom: 1px solid $prussian-blue; // 2px solid $endeavour-blue; // Changed 20220208-cws
+      // @include hover-focus() { // Deprecated
+      &:hover,
+      &:focus {
+        color: $tamu-maroon; // Added 20220208-cws
+        border-bottom: 3px solid $tamu-maroon; // 2px solid $cornflower-blue; // Changed 20220208-cws
+      }
+    }
+    &.vision-page {
+      padding-top: 80px; // Size of OTP nav + 30px
+      margin-top: -50px;
+    }
+  }
+
+  .vision-section {
+    h3 {
+      margin-top: 2rem;
+    }
+  }
+
+  // Floating images
+  .img-float-r {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    @include media-breakpoint-up(lg) {
+      float: right;
+      width: 50%;
+      margin-left: 1rem;
+    }
+  }
+  .img-float-l {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    @include media-breakpoint-up(lg) {
+      float: left;
+      width: 50%;
+      margin-right: 1rem;
+    }
+  }
+
+  // Use on content pages
+  // See https://jonrohan.codes/fieldnotes/vertically-center-clipped-image/
+  .banner-clipper {
+    height: 150px;
+    @include media-breakpoint-up(lg) {
+      margin-left: -$font-size-base;
+    }
+    overflow: hidden;
+    img {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  // Homepage border right xl+
+  .border-right-xl-6 {
+    @include media-breakpoint-up(xl) {
+      border-right: 6px solid $cerulean-blue;
+    }
+  }
+}
+@media print {
+  .content-col {
+    color: $body-color;
+  }
+}

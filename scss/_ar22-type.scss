@@ -1,0 +1,35 @@
+/**
+ *
+ * AR2022 Type
+ *
+ * Regular = 400
+ * Medium = 500
+ * Semi-bold = 600
+ * Bold = 700
+ *
+ */
+
+//h1,.h1,
+.page-title {
+  @include font-size(4.0625rem); // 65px
+  font-weight: 600;
+  color: $cerulean-blue;
+}
+h2,
+.h2 {
+  @include font-size(1.875rem); // 30px
+  font-weight: 600;
+  color: $prussian-blue; // Use .text-prussian-blue for color
+  text-transform: uppercase;
+}
+h3,
+.h3 {
+  @include font-size(1.25rem); // 20px
+  font-weight: 500;
+  color: $prussian-blue; // Use .text-prussian-blue for color
+}
+
+.text-black {
+  // stylelint-disable-next-line
+  color: $black !important;
+}

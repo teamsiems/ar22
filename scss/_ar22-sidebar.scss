@@ -1,0 +1,97 @@
+/**
+ *
+ * AR2022 Sidebar
+ * Note: We mixed .nav with .navbar
+ * //@include font-size($h2-font-size);
+ * //height: 100vh;
+ * //overflow: auto;
+ * stylelint-disable
+ * stylelint-enable
+ */
+
+.sidebar-col {
+  color: $body-color;
+  background-color: $smoke-white;
+
+  hr {
+    border-top-width: 2px;
+  }
+
+  .divit-brand {
+    padding-left: 3.5em;
+    @include font-size($navbar-brand-font-size);
+    //color: $white;
+    //text-decoration: none;
+    background-color: transparent;
+    background-image: url("../img/TAM-Logo-Box.png");
+    background-image: url("../img/TAM-Logo-Box.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 3em 3em;
+  }
+
+  .ar-title {
+    font-weight: 700;
+    color: $endeavour-blue; // $cerulean-blue; // Changed for more contrast 20220207-cws
+    text-decoration: none;
+  }
+
+  .navbar-text {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .navbar-collapse {
+    // Pages
+    .nav-link {
+      padding: .5rem;
+      font-weight: 700;
+      color: $endeavour-blue; // $cerulean-blue; // Changed for more contrast 20220207-cws
+      background-image: linear-gradient(180deg, $hawkes-blue 90%, $endeavour-blue 0); // linear-gradient(180deg, $hawkes-blue 90%, $cerulean-blue 0); // Changed for more contrast 20220207-cws
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+      //transition: background-size .4s ease;
+      &.active {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+      @include media-breakpoint-up(lg) {
+        // stylelint-disable-next-line
+        transition: all .4s ease;
+        // @include hover-focus() { // Deprecated
+        &:hover,
+        &:focus {
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+  .w-100-lg {
+    width: auto;
+  }
+  @include media-breakpoint-up(lg) {
+    .scroll-bar {
+      flex-wrap: nowrap;
+      // stylelint-disable-next-line
+      max-height: calc(100vh - 100px);
+      overflow-x: clip;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: $hawkes-blue transparent;
+      &::-webkit-scrollbar {
+        width: .5rem;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $hawkes-blue;
+      }
+    }
+    .w-100-lg {
+      width: 100%;
+    }
+  }
+}

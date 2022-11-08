@@ -1,0 +1,125 @@
+/**
+ *
+ * AR2022 Pull Quotes
+ *
+ */
+
+@mixin pull-quote($text:$saratoga-green, $border:0, $img:false, $bg:$smoke-white) {
+  // Left box (quote): No border, light grey background, dark green text
+  // Right box (image): No border, light grey background, dark green text
+  margin-bottom: $paragraph-margin-bottom;
+  .card-body {
+    background-color: $bg;
+    border: 0;
+    @include media-breakpoint-up(lg) {
+      position: relative;
+      z-index: 1000;
+      @if $img {
+        margin-right: -2rem;
+        margin-left: 2rem;
+      }
+    }
+    blockquote {
+      padding: 1em;
+      //margin: 0 0 0 2em;
+      color: $text;
+    }
+  }
+  @if $img {
+    .card-img,
+    .card-img-caption {
+      @include media-breakpoint-up(lg) {
+        position: relative;
+        margin-right: 2rem;
+        margin-left: -2rem;
+      }
+    }
+  }
+}
+
+/*
+<!-- Pullquote -->
+<div class="pull-quote-container" role="aside">
+	<blockquote class="pull-quote">
+		<p>This is a pull quote. It uses a blockquote element. Lorem ipsum dolor sit amet pickle dill consectetur adipiscing elit Consectetur adipiscing elit.</p>
+		<footer>
+			<cite>Dr. Lorem Ipsum</cite>
+		</footer>
+	</blockquote>
+</div>
+*/
+
+.pull-quote-container {
+  padding: 2rem 0;
+  margin: 2rem 0;
+  background-color: $smoke-white;
+
+  /*
+  &.w-50 {
+    // Make 100% below lg breakpoint-up
+    @include media-breakpoint-down(md) {
+      // stylelint-disable-next-line
+      width: 100% !important;
+    }
+  }
+  */
+}
+
+.pull-quote {
+  margin: 0 4rem;
+  color: $saratoga-green;
+  border: 0;
+  p {
+    position: relative;
+    font-family: raleway, "Open Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    //font-weight: 400;
+    &::before {
+      position: absolute;
+      top: -.5em;
+      left: -.5em;
+      font-size: 3rem;
+      //font-weight: 700;
+      content: open-quote;
+    }
+    &::after {
+      content: close-quote;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.pull-quote-img {
+  @include pull-quote($cerulean-blue, 0, true, $smoke-white);
+}
+
+.partner-success-img-r {
+  @include pull-quote($cerulean-blue, 0, true, $smoke-white);
+}
+
+.pull-quote-r {
+  max-width: 100%;
+  height: auto;
+  padding: 2rem 0;
+  margin: 0 0 1rem 1rem;
+  background-color: $smoke-white;
+  @include media-breakpoint-up(lg) {
+    float: right;
+    width: 50%;
+    margin-left: 1rem;
+  }
+}
+
+.pull-quote-l {
+  max-width: 100%;
+  height: auto;
+  padding: 2rem 0;
+  margin: 0 1rem 1rem 0;
+  background-color: $smoke-white;
+  @include media-breakpoint-up(lg) {
+    float: left;
+    width: 50%;
+    margin-right: 1rem;
+  }
+}

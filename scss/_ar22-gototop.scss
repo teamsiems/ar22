@@ -1,0 +1,62 @@
+/**
+ *
+ * AR2022 Go To Top
+ *
+ */
+
+.gototop {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  z-index: 10;
+  display: inline-block;
+  padding: .5rem;
+  overflow: hidden;
+  //font-size: 1.5rem;
+  color: $white;
+  text-decoration: none;
+  white-space: nowrap;
+  visibility: hidden;
+  background-color: rgba($tamu-maroon, .5);
+  @include border-radius(6px); //border-radius: 6px; //Make mixin call 20191014-cws
+  box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+  opacity: 0;
+  @include transition(opacity .3s 0s, visibility 0s .3s); //transition: opacity .3s 0s, visibility 0s .3s; //Make mixin call 20191014-cws
+  &:focus,
+  &:hover {
+    color: $white;
+    text-decoration: none;
+    background-color: $tamu-maroon;
+  }
+  &.gototop-is-visible,
+  &.gototop-fade-out,
+  .no-touch &:hover {
+    @include transition(opacity .3s 0s, visibility 0s 0s); //transition: opacity .3s 0s, visibility 0s 0s; //Make mixin call 20191014-cws
+  }
+  &.gototop-is-visible {
+    // the button becomes visible
+    visibility: visible;
+    opacity: 1;
+  }
+  &.gototop-fade-out {
+    // if the user keeps scrolling down, the button is out of focus and becomes less visible
+    opacity: .5;
+  }
+  .no-touch &:hover {
+    background-color: $tamu-maroon;
+    opacity: 1;
+  }
+  @include media-breakpoint-up(md) {
+    //right: 20px;
+    //bottom: 20px;
+  }
+  @include media-breakpoint-up(lg) {
+    //right: 30px;
+    //bottom: 30px;
+  }
+  .up-arrow {
+    &::before {
+      content: "\25B2";
+    }
+  }
+}

@@ -1,0 +1,11 @@
+/**
+ *
+ * AR2022 Borders
+ *
+*/
+
+@each $color, $value in $ar22-theme-colors {
+  .border-#{$color} {
+    border-color: $value;
+  }
+}
